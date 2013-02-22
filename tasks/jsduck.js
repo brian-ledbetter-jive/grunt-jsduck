@@ -9,6 +9,9 @@
 module.exports = function(grunt) {
     'use strict';
     grunt.registerMultiTask('jsduck', 'Compile JSDuck documentation', function(outDir) {
+	// BEGIN fix for file 
+        this.file = this.files[0];  
+        // END fix for file 
         var helpers = require('grunt-lib-contrib').init(grunt),
             cmd = 'jsduck',
             options = helpers.options(this),
